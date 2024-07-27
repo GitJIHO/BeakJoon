@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>KakaoTalk 메시지 전송</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>카카오톡 메시지 전송</h1>
+        <button id="loginButton" class="button">카카오톡으로 로그인</button>
+        <div id="friendsList" class="hidden">
+            <h2>친구 목록</h2>
+            <ul id="friends"></ul>
+        </div>
+        <button id="sendMessageButton" class="button hidden">메시지 보내기</button>
+        <div id="result" class="hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
