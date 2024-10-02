@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class b9291 {
+public class b9251 {
 
     static int[][] mat;
     static String[] row;
