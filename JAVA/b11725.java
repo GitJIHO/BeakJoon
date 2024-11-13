@@ -9,6 +9,7 @@ public class b11725 {
     static List<Integer>[] tree;
     static int[] parent;
     
+    @SuppressWarnings("unchecked")
     static void input() throws IOException {
         N = Integer.parseInt(br.readLine());
         tree = new ArrayList[N+1];
