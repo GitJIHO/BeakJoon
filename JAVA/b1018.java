@@ -21,12 +21,7 @@ public class b1018 {
 			String str = br.readLine();
 			
 			for (int j = 0; j < M; j++) {
-				if (str.charAt(j) == 'W') {
-					arr[i][j] = true;
-				} else {
-					arr[i][j] = false;
-				}
- 
+                arr[i][j] = str.charAt(j) == 'W';
 			}
 		}
  
