@@ -32,7 +32,6 @@ public class b1197 {
 
         edges = new ArrayList<Edge>();
         parent = new int[V+1];
-        
         for (int i=1; i<=V; i++) {
             parent[i] = i;
         }
