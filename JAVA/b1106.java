@@ -7,6 +7,7 @@ public class b1106 {
     static int C, N;
     static int[][] mat;
     static int[] dp;
+    static int MAX_VALUE = 20000000;
 
     static void input() throws IOException {
         String[] input = br.readLine().split(" ");
@@ -26,7 +27,7 @@ public class b1106 {
     }
 
     static void cal() {
-        Arrays.fill(dp, Integer.MAX_VALUE);
+        Arrays.fill(dp, MAX_VALUE);
         dp[0] = 0;
 
         for (int i=0; i<N; i++) {
@@ -34,7 +35,7 @@ public class b1106 {
             int value = mat[i][1];
             
             for (int j=value; j<C+101; j++) {
-                if (dp[j-value] != -1) {
+                if (dp[j-value] != MAX_VALUE) {
                     dp[j] = Math.min(dp[j], dp[j-value] + cost);
                 }
             }
@@ -42,7 +43,7 @@ public class b1106 {
     }
 
     static void result() throws IOException {
-        int min = Integer.MAX_VALUE;
+        int min = MAX_VALUE;
         for (int i=C; i<C+101; i++) {
             min = Math.min(min, dp[i]);
         }
