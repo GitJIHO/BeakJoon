@@ -13,11 +13,11 @@ public class b14244 {
     }
 
     static void cal() throws IOException {
-        int index;
-        for (int i=0; i < M - 1; i++) {
-            bw.write(0 + " " + String.valueOf(i+1) + "\n");
+        bw.write("0 1\n");
+        for (int i=1; i < M; i++) {
+            bw.write(1 + " " + String.valueOf(i+1) + "\n");
         }
-        for (int i=M - 1; i < N - 1; i++) {
+        for (int i=M; i < N - 1; i++) {
             bw.write(i + " " + String.valueOf(i+1) + "\n");
         }
     }
