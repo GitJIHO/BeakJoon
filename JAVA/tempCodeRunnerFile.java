@@ -1,2 +1,3 @@
-
-            int curx = row + dx[i];
+        // for (int i : dp) {
+        //     bw.write(i + " ");
+        // }
