@@ -11,7 +11,7 @@ public class b1107 {
         target = Integer.parseInt(br.readLine());
         N = Integer.parseInt(br.readLine());
         dead = new int[N];
-        if (N > 0) { // 고장난 버튼이 있을 때만 입력 받기
+        if (N > 0) {
             String[] input = br.readLine().split(" ");
             for (int i=0; i<N; i++) {
                 dead[i] = Integer.parseInt(input[i]);
