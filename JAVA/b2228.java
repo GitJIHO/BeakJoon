@@ -5,7 +5,7 @@ public class b2228 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static int[][] dp;
-    static int[] num, sum;
+    static int[] sum;
     static int N, M;
     static int MIN = -20000000;
 
@@ -31,7 +31,11 @@ public class b2228 {
                 dp[i][j] = dp[i-1][j];
                 
                 for (int k=1; k<=i; k++) {
-                    dp[i][j] = Math.max(dp[i][j], dp[k-2][j-1] + sum[i] - sum[k-2]);
+                    if (j == 1) {
+                        dp[i][j] = Math.max(dp[i][j], sum[i] - sum[k-1]);
+                    } else if (k >= 2) {
+                        dp[i][j] = Math.max(dp[i][j], dp[k-2][j-1] + sum[i] - sum[k-1]);
+                    }
                 }
             }
         }
@@ -42,6 +46,7 @@ public class b2228 {
         dp();
         bw.write(String.valueOf(dp[N][M]));
         bw.flush();
-        bw.close(); br.close();
+        bw.close(); 
+        br.close();
     }
 }
