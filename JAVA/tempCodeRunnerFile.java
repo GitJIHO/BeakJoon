@@ -1,47 +1,11 @@
-import java.util.*;
-import java.io.*;
 
-public class b2228 {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static int[][] dp;
-    static int[] num, sum;
-    static int N, M;
-    static int MIN = -20000000;
-
-    static void input() throws IOException {
-        String[] input = br.readLine().split(" ");
-        N = Integer.parseInt(input[0]);
-        M = Integer.parseInt(input[1]);
-        dp = new int[N+1][M+1];
-        sum = new int[N+1];
-        for (int i=0; i<N; i++) {
-            sum[i+1] = Integer.parseInt(br.readLine()) + sum[i];
-        }
-    }
-
-    static void dp() {
-        for (int i=0; i<=N; i++) {
-            Arrays.fill(dp[i], MIN);
-        }
-        dp[0][0] = 0;
-
-        for (int i=1; i<=N; i++) {
-            for (int j=1; j<=M; j++) {
-                dp[i][j] = dp[i-1][j];
-                
-                for (int k=1; k<=i; k++) {
-                    dp[i][j] = Math.max(dp[i][j], dp[k-2][j-1] + sum[i] - sum[k-2]);
-                }
-            }
-        }
-    }
-
-    public static void main(String[] args) throws IOException {
-        input();
-        dp();
-        bw.write(String.valueOf(dp[N][M]));
-        bw.flush();
-        bw.close(); br.close();
-    }
-}
+        // dist[X] = 0;
+        // while(!pq.isEmpty()) {
+        //     Node cur = pq.poll();
+        //     for (Node next : graph.get(cur.end)) {
+        //         if (dist[next.end] > dist[cur.end] + cur.weight) {
+        //             dist[next.end] = dist[cur.end] + cur.weight;
+        //             pq.offer(new Node(next.end, dist[next.end]));
+        //         }
+        //     }
+        // }
